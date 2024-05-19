@@ -1,0 +1,40 @@
+[
+  { "count" : 13198 }
+, { "name" : "/quant/QuantizeLinear", "timeMs" : 47.1571, "averageMs" : 0.00357305, "medianMs" : 0.003072, "percentage" : 1.83393 }
+, { "name" : "/model_fp32/conv1/Constant_2_output_0 + /model_fp32/conv1/Conv + /model_fp32/conv1/Relu + /model_fp32/maxpool/MaxPool", "timeMs" : 62.4383, "averageMs" : 0.00473089, "medianMs" : 0.004512, "percentage" : 2.42821 }
+, { "name" : "/model_fp32/layer1/0/conv1/Constant_2_output_0 + /model_fp32/layer1/0/conv1/Conv + /model_fp32/layer1/0/conv1/Relu", "timeMs" : 74.396, "averageMs" : 0.00563692, "medianMs" : 0.005312, "percentage" : 2.89324 }
+, { "name" : "/model_fp32/layer1/0/conv2/Constant_2_output_0 + /model_fp32/layer1/0/conv2/Conv", "timeMs" : 83.6455, "averageMs" : 0.00633774, "medianMs" : 0.006144, "percentage" : 3.25295 }
+, { "name" : "PWN(/model_fp32/layer1/0/Add, PWN(/model_fp32/layer1/0/relu2/Relu))", "timeMs" : 54.8506, "averageMs" : 0.00415598, "medianMs" : 0.004096, "percentage" : 2.13312 }
+, { "name" : "/model_fp32/layer1/1/conv1/Constant_2_output_0 + /model_fp32/layer1/1/conv1/Conv + /model_fp32/layer1/1/conv1/Relu", "timeMs" : 73.8547, "averageMs" : 0.0055959, "medianMs" : 0.00528, "percentage" : 2.87219 }
+, { "name" : "/model_fp32/layer1/1/conv2/Constant_2_output_0 + /model_fp32/layer1/1/conv2/Conv", "timeMs" : 76.8491, "averageMs" : 0.00582279, "medianMs" : 0.006144, "percentage" : 2.98864 }
+, { "name" : "PWN(/model_fp32/layer1/1/Add, PWN(/model_fp32/layer1/1/relu2/Relu))", "timeMs" : 54.5753, "averageMs" : 0.00413512, "medianMs" : 0.004096, "percentage" : 2.12242 }
+, { "name" : "/model_fp32/layer2/0/conv1/Constant_2_output_0 + /model_fp32/layer2/0/conv1/Conv + /model_fp32/layer2/0/conv1/Relu", "timeMs" : 73.5274, "averageMs" : 0.0055711, "medianMs" : 0.00528, "percentage" : 2.85946 }
+, { "name" : "/model_fp32/layer2/0/downsample/0/Constant_2_output_0 + /model_fp32/layer2/0/downsample/0/Conv", "timeMs" : 69.9515, "averageMs" : 0.00530016, "medianMs" : 0.00512, "percentage" : 2.72039 }
+, { "name" : "/model_fp32/layer2/0/conv2/Constant_2_output_0 + /model_fp32/layer2/0/conv2/Conv", "timeMs" : 86.0109, "averageMs" : 0.00651697, "medianMs" : 0.006144, "percentage" : 3.34494 }
+, { "name" : "PWN(/model_fp32/layer2/0/Add, PWN(/model_fp32/layer2/0/relu2/Relu))", "timeMs" : 53.1428, "averageMs" : 0.00402658, "medianMs" : 0.004096, "percentage" : 2.06671 }
+, { "name" : "/model_fp32/layer2/1/conv1/Constant_2_output_0 + /model_fp32/layer2/1/conv1/Conv + /model_fp32/layer2/1/conv1/Relu", "timeMs" : 89.8372, "averageMs" : 0.00680688, "medianMs" : 0.007168, "percentage" : 3.49374 }
+, { "name" : "/model_fp32/layer2/1/conv2/Constant_2_output_0 + /model_fp32/layer2/1/conv2/Conv", "timeMs" : 86.4927, "averageMs" : 0.00655347, "medianMs" : 0.006176, "percentage" : 3.36368 }
+, { "name" : "PWN(/model_fp32/layer2/1/Add, PWN(/model_fp32/layer2/1/relu2/Relu))", "timeMs" : 55.3327, "averageMs" : 0.00419251, "medianMs" : 0.004096, "percentage" : 2.15187 }
+, { "name" : "/model_fp32/layer3/0/conv1/Constant_2_output_0 + /model_fp32/layer3/0/conv1/Conv + /model_fp32/layer3/0/conv1/Relu", "timeMs" : 88.3418, "averageMs" : 0.00669357, "medianMs" : 0.006816, "percentage" : 3.43559 }
+, { "name" : "/model_fp32/layer3/0/downsample/0/Constant_2_output_0 + /model_fp32/layer3/0/downsample/0/Conv", "timeMs" : 71.1186, "averageMs" : 0.00538859, "medianMs" : 0.00512, "percentage" : 2.76578 }
+, { "name" : "/model_fp32/layer3/0/conv2/Constant_2_output_0 + /model_fp32/layer3/0/conv2/Conv", "timeMs" : 110.856, "averageMs" : 0.00839949, "medianMs" : 0.008192, "percentage" : 4.31118 }
+, { "name" : "PWN(/model_fp32/layer3/0/Add, PWN(/model_fp32/layer3/0/relu2/Relu))", "timeMs" : 52.1687, "averageMs" : 0.00395277, "medianMs" : 0.004096, "percentage" : 2.02882 }
+, { "name" : "/model_fp32/layer3/1/conv1/Constant_2_output_0 + /model_fp32/layer3/1/conv1/Conv + /model_fp32/layer3/1/conv1/Relu", "timeMs" : 110.153, "averageMs" : 0.00834619, "medianMs" : 0.008192, "percentage" : 4.28382 }
+, { "name" : "/model_fp32/layer3/1/conv2/Constant_2_output_0 + /model_fp32/layer3/1/conv2/Conv", "timeMs" : 114.79, "averageMs" : 0.0086975, "medianMs" : 0.0088, "percentage" : 4.46414 }
+, { "name" : "PWN(/model_fp32/layer3/1/Add, PWN(/model_fp32/layer3/1/relu2/Relu))", "timeMs" : 55.6396, "averageMs" : 0.00421576, "medianMs" : 0.004096, "percentage" : 2.16381 }
+, { "name" : "/model_fp32/layer4/0/conv1/Constant_2_output_0 + /model_fp32/layer4/0/conv1/Conv + /model_fp32/layer4/0/conv1/Relu", "timeMs" : 109.584, "averageMs" : 0.00830306, "medianMs" : 0.008192, "percentage" : 4.26168 }
+, { "name" : "/model_fp32/layer4/0/downsample/0/Constant_2_output_0 + /model_fp32/layer4/0/downsample/0/Conv", "timeMs" : 66.2352, "averageMs" : 0.00501858, "medianMs" : 0.00512, "percentage" : 2.57587 }
+, { "name" : "/model_fp32/layer4/0/conv2/Constant_2_output_0 + /model_fp32/layer4/0/conv2/Conv", "timeMs" : 161.905, "averageMs" : 0.0122674, "medianMs" : 0.012288, "percentage" : 6.29642 }
+, { "name" : "Reformatting CopyNode for Input Tensor 0 to PWN(/model_fp32/layer4/0/Add, PWN(/model_fp32/layer4/0/relu2/Relu))", "timeMs" : 0, "averageMs" : 0, "medianMs" : 0, "percentage" : 0 }
+, { "name" : "Reformatting CopyNode for Input Tensor 1 to PWN(/model_fp32/layer4/0/Add, PWN(/model_fp32/layer4/0/relu2/Relu))", "timeMs" : 0, "averageMs" : 0, "medianMs" : 0, "percentage" : 0 }
+, { "name" : "PWN(/model_fp32/layer4/0/Add, PWN(/model_fp32/layer4/0/relu2/Relu))", "timeMs" : 47.1687, "averageMs" : 0.00357393, "medianMs" : 0.00336, "percentage" : 1.83438 }
+, { "name" : "Reformatting CopyNode for Input Tensor 0 to /model_fp32/layer4/1/conv1/Constant_2_output_0 + /model_fp32/layer4/1/conv1/Conv + /model_fp32/layer4/1/conv1/Relu", "timeMs" : 0, "averageMs" : 0, "medianMs" : 0, "percentage" : 0 }
+, { "name" : "/model_fp32/layer4/1/conv1/Constant_2_output_0 + /model_fp32/layer4/1/conv1/Conv + /model_fp32/layer4/1/conv1/Relu", "timeMs" : 157.053, "averageMs" : 0.0118998, "medianMs" : 0.012288, "percentage" : 6.10775 }
+, { "name" : "/model_fp32/layer4/1/conv2/Constant_2_output_0 + /model_fp32/layer4/1/conv2/Conv", "timeMs" : 162.181, "averageMs" : 0.0122883, "medianMs" : 0.012288, "percentage" : 6.30718 }
+, { "name" : "Reformatting CopyNode for Input Tensor 1 to PWN(/model_fp32/layer4/1/Add, PWN(/model_fp32/layer4/1/relu2/Relu))", "timeMs" : 0, "averageMs" : 0, "medianMs" : 0, "percentage" : 0 }
+, { "name" : "PWN(/model_fp32/layer4/1/Add, PWN(/model_fp32/layer4/1/relu2/Relu))", "timeMs" : 44.6518, "averageMs" : 0.00338323, "medianMs" : 0.003072, "percentage" : 1.7365 }
+, { "name" : "Reformatting CopyNode for Input Tensor 0 to /model_fp32/fc/Constant_2_output_0 + /model_fp32/fc/Conv", "timeMs" : 0, "averageMs" : 0, "medianMs" : 0, "percentage" : 0 }
+, { "name" : "/model_fp32/fc/Constant_2_output_0 + /model_fp32/fc/Conv", "timeMs" : 79.56, "averageMs" : 0.00602819, "medianMs" : 0.006144, "percentage" : 3.09406 }
+, { "name" : "/model_fp32/Flatten", "timeMs" : 53.0385, "averageMs" : 0.00401868, "medianMs" : 0.004096, "percentage" : 2.06265 }
+, { "name" : "/dequant/DequantizeLinear", "timeMs" : 44.8681, "averageMs" : 0.00339961, "medianMs" : 0.003232, "percentage" : 1.74491 }
+]
