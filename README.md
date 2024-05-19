@@ -80,7 +80,6 @@ $ trtexec --onnx=saved_models/resnet_quantized_cifar10_modified.onnx --saveEngin
 
 Even if the input images to the ResNet model are small (32 x 32) and the batch size is only 1, comparing to the floating-point ResNet engine, the INT8-quantized ResNet engine has a 1.2x latency improvement. The models that have higher math utilization will have more significant latency improvements when quantized to INT8.
 
-
 ### Validate TensorRT Engine
 
 The correctness of the INT8-quantized ResNet TensorRT engine will be validated using a custom TensorRT inference Python script. If the TensorRT engine was built correctly, the accuracy of the INT8-quantized ResNet engine should match the PyTorch INT8-quantized model accuracy.
@@ -98,8 +97,5 @@ The accuracy of the INT8-quantized ResNet TensorRT engine matches the PyTorch IN
 
 ## References
 
-
-* []()
-
-
-
+- [PyTorch Static Quantization](https://leimao.github.io/blog/PyTorch-Static-Quantization/)
+- [PyTorch Eager Mode Quantization TensorRT Acceleration](https://leimao.github.io/blog/PyTorch-Eager-Mode-Quantization-TensorRT-Acceleration/)
