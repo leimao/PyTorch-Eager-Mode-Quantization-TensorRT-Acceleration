@@ -29,10 +29,12 @@
 ,"Reformatting CopyNode for Input Tensor 0 to /model_fp32/layer4/1/conv1/Constant_2_output_0 + /model_fp32/layer4/1/conv1/Conv + /model_fp32/layer4/1/conv1/Relu"
 ,"/model_fp32/layer4/1/conv1/Constant_2_output_0 + /model_fp32/layer4/1/conv1/Conv + /model_fp32/layer4/1/conv1/Relu"
 ,"/model_fp32/layer4/1/conv2/Constant_2_output_0 + /model_fp32/layer4/1/conv2/Conv"
+,"Reformatting CopyNode for Input Tensor 0 to PWN(/model_fp32/layer4/1/Add, PWN(/model_fp32/layer4/1/relu2/Relu))"
 ,"Reformatting CopyNode for Input Tensor 1 to PWN(/model_fp32/layer4/1/Add, PWN(/model_fp32/layer4/1/relu2/Relu))"
 ,"PWN(/model_fp32/layer4/1/Add, PWN(/model_fp32/layer4/1/relu2/Relu))"
 ,"Reformatting CopyNode for Input Tensor 0 to /model_fp32/fc/Constant_2_output_0 + /model_fp32/fc/Conv"
 ,"/model_fp32/fc/Constant_2_output_0 + /model_fp32/fc/Conv"
+,"Reformatting CopyNode for Input Tensor 0 to /model_fp32/Flatten"
 ,"/model_fp32/Flatten"
 ,"/dequant/DequantizeLinear"
 ],

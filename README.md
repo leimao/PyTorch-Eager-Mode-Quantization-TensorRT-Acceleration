@@ -54,28 +54,28 @@ The floating-point and INT8-quantized ResNet ONNX models will be built to Tensor
 
 ```bash
 $ trtexec --onnx=saved_models/resnet_cifar10.onnx --saveEngine=saved_models/resnet_cifar10_fp16.engine --fp16 --separateProfileRun --exportLayerInfo=saved_models/resnet_cifar10_fp16_layer_info.json --exportProfile=saved_models/resnet_cifar10_fp16_profile.json --verbose &> saved_models/resnet_cifar10_fp16_build_log.txt
-[05/19/2024-17:33:07] [I] === Performance summary ===
-[05/19/2024-17:33:07] [I] Throughput: 5190.48 qps
-[05/19/2024-17:33:07] [I] Latency: min = 0.192139 ms, max = 0.948242 ms, mean = 0.198548 ms, median = 0.19458 ms, percentile(90%) = 0.196777 ms, percentile(95%) = 0.198181 ms, percentile(99%) = 0.219116 ms
-[05/19/2024-17:33:07] [I] Enqueue Time: min = 0.0493164 ms, max = 0.168213 ms, mean = 0.0594481 ms, median = 0.0557861 ms, percentile(90%) = 0.0664062 ms, percentile(95%) = 0.090332 ms, percentile(99%) = 0.097168 ms
-[05/19/2024-17:33:07] [I] H2D Latency: min = 0.00366211 ms, max = 0.0292969 ms, mean = 0.00444743 ms, median = 0.00411987 ms, percentile(90%) = 0.0057373 ms, percentile(95%) = 0.00585938 ms, percentile(99%) = 0.00610352 ms
-[05/19/2024-17:33:07] [I] GPU Compute Time: min = 0.185303 ms, max = 0.941162 ms, mean = 0.190965 ms, median = 0.187378 ms, percentile(90%) = 0.188477 ms, percentile(95%) = 0.189453 ms, percentile(99%) = 0.208984 ms
-[05/19/2024-17:33:07] [I] D2H Latency: min = 0.00244141 ms, max = 0.0266113 ms, mean = 0.00313933 ms, median = 0.00292969 ms, percentile(90%) = 0.0038147 ms, percentile(95%) = 0.00402832 ms, percentile(99%) = 0.00439453 ms
-[05/19/2024-17:33:07] [I] Total Host Walltime: 3.00049 s
-[05/19/2024-17:33:07] [I] Total GPU Compute Time: 2.9741 s
+[05/19/2024-19:06:41] [I] === Performance summary ===
+[05/19/2024-19:06:41] [I] Throughput: 4760.8 qps
+[05/19/2024-19:06:41] [I] Latency: min = 0.193115 ms, max = 1.85248 ms, mean = 0.215958 ms, median = 0.195679 ms, percentile(90%) = 0.197632 ms, percentile(95%) = 0.199219 ms, percentile(99%) = 0.910339 ms
+[05/19/2024-19:06:41] [I] Enqueue Time: min = 0.0510254 ms, max = 0.203674 ms, mean = 0.0646378 ms, median = 0.0593262 ms, percentile(90%) = 0.0931091 ms, percentile(95%) = 0.0960083 ms, percentile(99%) = 0.105347 ms
+[05/19/2024-19:06:41] [I] H2D Latency: min = 0.00366211 ms, max = 0.0654297 ms, mean = 0.00467193 ms, median = 0.00415039 ms, percentile(90%) = 0.0057373 ms, percentile(95%) = 0.00585938 ms, percentile(99%) = 0.00701904 ms
+[05/19/2024-19:06:41] [I] GPU Compute Time: min = 0.186279 ms, max = 1.8432 ms, mean = 0.208177 ms, median = 0.188354 ms, percentile(90%) = 0.189423 ms, percentile(95%) = 0.19043 ms, percentile(99%) = 0.903168 ms
+[05/19/2024-19:06:41] [I] D2H Latency: min = 0.00256348 ms, max = 0.0194092 ms, mean = 0.00311522 ms, median = 0.00292969 ms, percentile(90%) = 0.00366211 ms, percentile(95%) = 0.00390625 ms, percentile(99%) = 0.00427246 ms
+[05/19/2024-19:06:41] [I] Total Host Walltime: 3.00055 s
+[05/19/2024-19:06:41] [I] Total GPU Compute Time: 2.97381 s
 ```
 
 ```bash
 $ trtexec --onnx=saved_models/resnet_quantized_cifar10_modified.onnx --saveEngine=saved_models/resnet_cifar10_int8.engine --int8 --separateProfileRun --exportLayerInfo=saved_models/resnet_cifar10_int8_layer_info.json --exportProfile=saved_models/resnet_cifar10_int8_profile.json --verbose &> saved_models/resnet_cifar10_int8_build_log.txt
-[05/19/2024-17:35:46] [I] === Performance summary ===
-[05/19/2024-17:35:46] [I] Throughput: 6288.12 qps
-[05/19/2024-17:35:46] [I] Latency: min = 0.158447 ms, max = 1.18469 ms, mean = 0.164444 ms, median = 0.160645 ms, percentile(90%) = 0.162354 ms, percentile(95%) = 0.164307 ms, percentile(99%) = 0.22522 ms
-[05/19/2024-17:35:46] [I] Enqueue Time: min = 0.0617676 ms, max = 0.507812 ms, mean = 0.0791843 ms, median = 0.0661621 ms, percentile(90%) = 0.108398 ms, percentile(95%) = 0.109619 ms, percentile(99%) = 0.141724 ms
-[05/19/2024-17:35:46] [I] H2D Latency: min = 0.00341797 ms, max = 0.210815 ms, mean = 0.00430628 ms, median = 0.00402832 ms, percentile(90%) = 0.00491333 ms, percentile(95%) = 0.0057373 ms, percentile(99%) = 0.0067749 ms
-[05/19/2024-17:35:46] [I] GPU Compute Time: min = 0.151489 ms, max = 1.17554 ms, mean = 0.156959 ms, median = 0.153564 ms, percentile(90%) = 0.154602 ms, percentile(95%) = 0.154785 ms, percentile(99%) = 0.202637 ms
-[05/19/2024-17:35:46] [I] D2H Latency: min = 0.00256348 ms, max = 0.0269775 ms, mean = 0.00318154 ms, median = 0.00292969 ms, percentile(90%) = 0.00378418 ms, percentile(95%) = 0.00408936 ms, percentile(99%) = 0.0045166 ms
-[05/19/2024-17:35:46] [I] Total Host Walltime: 3.00106 s
-[05/19/2024-17:35:46] [I] Total GPU Compute Time: 2.96197 s
+[05/19/2024-19:09:22] [I] === Performance summary ===
+[05/19/2024-19:09:22] [I] Throughput: 5614.67 qps
+[05/19/2024-19:09:22] [I] Latency: min = 0.157227 ms, max = 1.13483 ms, mean = 0.183582 ms, median = 0.159729 ms, percentile(90%) = 0.162476 ms, percentile(95%) = 0.352905 ms, percentile(99%) = 0.694092 ms
+[05/19/2024-19:09:22] [I] Enqueue Time: min = 0.0622559 ms, max = 0.625732 ms, mean = 0.0809989 ms, median = 0.067627 ms, percentile(90%) = 0.112549 ms, percentile(95%) = 0.118164 ms, percentile(99%) = 0.152832 ms
+[05/19/2024-19:09:22] [I] H2D Latency: min = 0.0032959 ms, max = 0.296875 ms, mean = 0.00448601 ms, median = 0.00415039 ms, percentile(90%) = 0.00561523 ms, percentile(95%) = 0.00585938 ms, percentile(99%) = 0.00720215 ms
+[05/19/2024-19:09:22] [I] GPU Compute Time: min = 0.150391 ms, max = 1.1264 ms, mean = 0.17584 ms, median = 0.152588 ms, percentile(90%) = 0.153625 ms, percentile(95%) = 0.345093 ms, percentile(99%) = 0.687012 ms
+[05/19/2024-19:09:22] [I] D2H Latency: min = 0.00244141 ms, max = 0.0214844 ms, mean = 0.0032584 ms, median = 0.00292969 ms, percentile(90%) = 0.00415039 ms, percentile(95%) = 0.00439453 ms, percentile(99%) = 0.00488281 ms
+[05/19/2024-19:09:22] [I] Total Host Walltime: 3.00053 s
+[05/19/2024-19:09:22] [I] Total GPU Compute Time: 2.96238 s
 ```
 
 Even if the input images to the ResNet model are small (32 x 32) and the batch size is only 1, comparing to the floating-point ResNet engine, the INT8-quantized ResNet engine has a 1.2x latency improvement. The models that have higher math utilization will have more significant latency improvements when quantized to INT8.
@@ -90,7 +90,7 @@ Input Tensor:
 Tensor Name: x.1 Shape: (1, 3, 32, 32) Data Type: float32 Data Format: TensorFormat.LINEAR
 Output Tensor:
 Tensor Name: 755 Shape: (1, 10) Data Type: float32 Data Format: TensorFormat.LINEAR
-Evaluation Accuracy: 0.8523
+Evaluation Accuracy: 0.8512
 ```
 
 The accuracy of the INT8-quantized ResNet TensorRT engine matches the PyTorch INT8-quantized model accuracy, suggesting that the INT8-quantized TensorRT engine was built correctly.

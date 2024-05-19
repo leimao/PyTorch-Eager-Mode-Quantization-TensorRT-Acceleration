@@ -425,17 +425,21 @@ def main():
     # Select quantization schemes from
     # https://pytorch.org/docs/stable/quantization-support.html
     # From https://github.com/pytorch/pytorch/blob/v2.3.0/torch/ao/quantization/observer.py
-    default_weight_observer = torch.ao.quantization.MinMaxObserver.with_args(
-        dtype=torch.qint8, qscheme=torch.per_tensor_symmetric)
-    per_channel_weight_observer_range_neg_127_to_127 = torch.ao.quantization.PerChannelMinMaxObserver.with_args(
+    per_tensor_activation_observer_range_neg_128_to_127 = torch.ao.quantization.MinMaxObserver.with_args(
+        dtype=torch.qint8,
+        qscheme=torch.per_tensor_symmetric,
+        quant_min=-128,
+        quant_max=127,
+        eps=2**-12)
+    per_channel_weight_observer_range_neg_128_to_127 = torch.ao.quantization.PerChannelMinMaxObserver.with_args(
         dtype=torch.qint8,
         qscheme=torch.per_channel_symmetric,
-        quant_min=-127,
+        quant_min=-128,
         quant_max=127,
         eps=2**-12)
     quantization_config = torch.ao.quantization.QConfig(
-        activation=default_weight_observer,
-        weight=per_channel_weight_observer_range_neg_127_to_127)
+        activation=per_tensor_activation_observer_range_neg_128_to_127,
+        weight=per_channel_weight_observer_range_neg_128_to_127)
 
     quantized_model.qconfig = quantization_config
     # To skip a layer, we need to patch that layer with DequantStub before and QuantStub after.
