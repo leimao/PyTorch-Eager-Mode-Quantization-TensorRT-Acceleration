@@ -38,7 +38,7 @@ INT8 CPU Inference Latency: 46.98 ms / sample
 INT8 JIT CPU Inference Latency: 44.84 ms / sample
 ```
 
-The INT8-quantized ResNet model has almost the same accuracy as the floating-point ResNet model. Probably because PyTorch CPU inference does not support per-channel symmetric quantization well, the INT8-quantized ResNet model CPU inference is much slower comparing to [other quantization schemes, which is not compatible to TensorRT quantization requirements, on the same model](https://leimao.github.io/blog/PyTorch-Static-Quantization/).
+The INT8-quantized ResNet model has almost the same accuracy as the floating-point ResNet model. Probably because PyTorch CPU inference does not support per-channel symmetric quantization well, the INT8-quantized ResNet model CPU inference is much slower comparing to [other quantization schemes](https://leimao.github.io/blog/PyTorch-Static-Quantization/), which is not compatible to TensorRT quantization requirements, on the same model.
 
 ### INT8-quantized ResNet ONNX Model Graph Surgery
 
