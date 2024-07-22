@@ -91,11 +91,12 @@ def main():
         test_data = test_data.numpy().flatten()
         test_label = test_label.numpy().flatten()
         np.copyto(inputs[0].host, test_data)
-        common.do_inference_v2(context,
-                               bindings=bindings,
-                               inputs=inputs,
-                               outputs=outputs,
-                               stream=stream)
+        common.do_inference(context=context,
+                            engine=engine,
+                            bindings=bindings,
+                            inputs=inputs,
+                            outputs=outputs,
+                            stream=stream)
         # Convert output to Numpy array.
         output_label = np.frombuffer(outputs[0].host,
                                      dtype=np.float32).reshape(-1, 10)

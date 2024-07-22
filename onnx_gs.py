@@ -1,6 +1,8 @@
 import onnx
 import onnx_graphsurgeon as gs
 
+import numpy as np
+
 if __name__ == "__main__":
 
     # Load the ONNX model
@@ -44,6 +46,22 @@ if __name__ == "__main__":
                 bias_float = bias_int * bias_scale
                 node.inputs[2] = gs.Constant(name=f"{node.name}_bias",
                                              values=bias_float)
+
+    graph.fold_constants()
+
+    tensors = graph.tensors()
+    # Fix all the zero-point tensor data types in the QuantizeLinear and DequantizeLinear nodes.
+    # Some of the zero-point tensor data types are UINT8 and this will cause warnings in TensorRT.
+    # Fixing the zero-point tensor data types to INT8.
+    for node in graph.nodes:
+        if node.op == "QuantizeLinear" or node.op == "DequantizeLinear":
+            if node.inputs[2].dtype == np.uint8:
+                print(
+                    f"Fixing zero-point tensor data type for node: {node.name} from UINT8 to INT8"
+                )
+                node.inputs[2].values = np.zeros_like(node.inputs[2].values,
+                                                      dtype=np.int8)
+                assert node.inputs[2].dtype == np.int8
 
     graph.cleanup()
 
