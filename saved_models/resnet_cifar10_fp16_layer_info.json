@@ -22,8 +22,8 @@
 ,"/layer4/layer4.1/conv2/Conv + /layer4/layer4.1/Add + /layer4/layer4.1/relu2/Relu"
 ,"Reformatting CopyNode for Input Tensor 0 to /fc/Conv"
 ,"/fc/Conv"
-,"Reformatting CopyNode for Input Tensor 0 to /Flatten"
 ,"/Flatten"
+,"Reformatting CopyNode for Output Tensor 0 to /Flatten"
 ],
 "Bindings": ["input.1"
 ,"191"

@@ -1,42 +1,41 @@
 [
-  { "count" : 13386 }
-, { "name" : "/quant/QuantizeLinear", "timeMs" : 48.5443, "averageMs" : 0.0036265, "medianMs" : 0.003072, "percentage" : 1.87982 }
-, { "name" : "/model_fp32/conv1/Constant_2_output_0 + /model_fp32/conv1/Conv + /model_fp32/conv1/Relu + /model_fp32/maxpool/MaxPool", "timeMs" : 64.0245, "averageMs" : 0.00478295, "medianMs" : 0.004256, "percentage" : 2.47927 }
-, { "name" : "/model_fp32/layer1/0/conv1/Constant_2_output_0 + /model_fp32/layer1/0/conv1/Conv + /model_fp32/layer1/0/conv1/Relu", "timeMs" : 75.7924, "averageMs" : 0.00566206, "medianMs" : 0.005312, "percentage" : 2.93497 }
-, { "name" : "/model_fp32/layer1/0/conv2/Constant_2_output_0 + /model_fp32/layer1/0/conv2/Conv", "timeMs" : 74.6524, "averageMs" : 0.0055769, "medianMs" : 0.005248, "percentage" : 2.89082 }
-, { "name" : "PWN(/model_fp32/layer1/0/Add, PWN(/model_fp32/layer1/0/relu2/Relu))", "timeMs" : 56.8594, "averageMs" : 0.00424768, "medianMs" : 0.004096, "percentage" : 2.20181 }
-, { "name" : "/model_fp32/layer1/1/conv1/Constant_2_output_0 + /model_fp32/layer1/1/conv1/Conv + /model_fp32/layer1/1/conv1/Relu", "timeMs" : 74.703, "averageMs" : 0.00558068, "medianMs" : 0.005216, "percentage" : 2.89278 }
-, { "name" : "/model_fp32/layer1/1/conv2/Constant_2_output_0 + /model_fp32/layer1/1/conv2/Conv", "timeMs" : 75.1485, "averageMs" : 0.00561396, "medianMs" : 0.005472, "percentage" : 2.91004 }
-, { "name" : "PWN(/model_fp32/layer1/1/Add, PWN(/model_fp32/layer1/1/relu2/Relu))", "timeMs" : 55.7648, "averageMs" : 0.0041659, "medianMs" : 0.004096, "percentage" : 2.15942 }
-, { "name" : "/model_fp32/layer2/0/conv1/Constant_2_output_0 + /model_fp32/layer2/0/conv1/Conv + /model_fp32/layer2/0/conv1/Relu", "timeMs" : 74.9252, "averageMs" : 0.00559728, "medianMs" : 0.00544, "percentage" : 2.90139 }
-, { "name" : "/model_fp32/layer2/0/downsample/0/Constant_2_output_0 + /model_fp32/layer2/0/downsample/0/Conv", "timeMs" : 66.0126, "averageMs" : 0.00493147, "medianMs" : 0.00512, "percentage" : 2.55626 }
-, { "name" : "/model_fp32/layer2/0/conv2/Constant_2_output_0 + /model_fp32/layer2/0/conv2/Conv", "timeMs" : 86.6509, "averageMs" : 0.00647325, "medianMs" : 0.006144, "percentage" : 3.35545 }
-, { "name" : "PWN(/model_fp32/layer2/0/Add, PWN(/model_fp32/layer2/0/relu2/Relu))", "timeMs" : 54.4987, "averageMs" : 0.00407132, "medianMs" : 0.004096, "percentage" : 2.11039 }
-, { "name" : "/model_fp32/layer2/1/conv1/Constant_2_output_0 + /model_fp32/layer2/1/conv1/Conv + /model_fp32/layer2/1/conv1/Relu", "timeMs" : 91.7085, "averageMs" : 0.00685107, "medianMs" : 0.007168, "percentage" : 3.5513 }
-, { "name" : "/model_fp32/layer2/1/conv2/Constant_2_output_0 + /model_fp32/layer2/1/conv2/Conv", "timeMs" : 87.2967, "averageMs" : 0.00652149, "medianMs" : 0.006176, "percentage" : 3.38046 }
-, { "name" : "PWN(/model_fp32/layer2/1/Add, PWN(/model_fp32/layer2/1/relu2/Relu))", "timeMs" : 56.3227, "averageMs" : 0.00420758, "medianMs" : 0.004096, "percentage" : 2.18103 }
-, { "name" : "/model_fp32/layer3/0/conv1/Constant_2_output_0 + /model_fp32/layer3/0/conv1/Conv + /model_fp32/layer3/0/conv1/Relu", "timeMs" : 87.3377, "averageMs" : 0.00652456, "medianMs" : 0.006144, "percentage" : 3.38205 }
-, { "name" : "/model_fp32/layer3/0/downsample/0/Constant_2_output_0 + /model_fp32/layer3/0/downsample/0/Conv", "timeMs" : 69.9115, "averageMs" : 0.00522273, "medianMs" : 0.00512, "percentage" : 2.70724 }
-, { "name" : "/model_fp32/layer3/0/conv2/Constant_2_output_0 + /model_fp32/layer3/0/conv2/Conv", "timeMs" : 111.862, "averageMs" : 0.00835665, "medianMs" : 0.008192, "percentage" : 4.33172 }
-, { "name" : "PWN(/model_fp32/layer3/0/Add, PWN(/model_fp32/layer3/0/relu2/Relu))", "timeMs" : 55.632, "averageMs" : 0.00415598, "medianMs" : 0.004096, "percentage" : 2.15428 }
-, { "name" : "/model_fp32/layer3/1/conv1/Constant_2_output_0 + /model_fp32/layer3/1/conv1/Conv + /model_fp32/layer3/1/conv1/Relu", "timeMs" : 111.161, "averageMs" : 0.00830426, "medianMs" : 0.008192, "percentage" : 4.30457 }
-, { "name" : "/model_fp32/layer3/1/conv2/Constant_2_output_0 + /model_fp32/layer3/1/conv2/Conv", "timeMs" : 116.585, "averageMs" : 0.00870945, "medianMs" : 0.008608, "percentage" : 4.5146 }
-, { "name" : "PWN(/model_fp32/layer3/1/Add, PWN(/model_fp32/layer3/1/relu2/Relu))", "timeMs" : 56.1257, "averageMs" : 0.00419286, "medianMs" : 0.004096, "percentage" : 2.1734 }
-, { "name" : "/model_fp32/layer4/0/conv1/Constant_2_output_0 + /model_fp32/layer4/0/conv1/Conv + /model_fp32/layer4/0/conv1/Relu", "timeMs" : 110.978, "averageMs" : 0.00829057, "medianMs" : 0.008192, "percentage" : 4.29747 }
-, { "name" : "/model_fp32/layer4/0/downsample/0/Constant_2_output_0 + /model_fp32/layer4/0/downsample/0/Conv", "timeMs" : 70.6954, "averageMs" : 0.0052813, "medianMs" : 0.00512, "percentage" : 2.73759 }
-, { "name" : "/model_fp32/layer4/0/conv2/Constant_2_output_0 + /model_fp32/layer4/0/conv2/Conv", "timeMs" : 164.004, "averageMs" : 0.0122519, "medianMs" : 0.012288, "percentage" : 6.35086 }
+  { "count" : 13629 }
+, { "name" : "/quant/QuantizeLinear", "timeMs" : 47.537, "averageMs" : 0.00348793, "medianMs" : 0.003072, "percentage" : 1.81145 }
+, { "name" : "/model_fp32/conv1/Constant_2_output_0 + /model_fp32/conv1/Conv + /model_fp32/conv1/Relu + /model_fp32/maxpool/MaxPool", "timeMs" : 64.1685, "averageMs" : 0.00470824, "medianMs" : 0.004736, "percentage" : 2.44522 }
+, { "name" : "/model_fp32/layer1/0/conv1/Constant_2_output_0 + /model_fp32/layer1/0/conv1/Conv + /model_fp32/layer1/0/conv1/Relu", "timeMs" : 71.9168, "averageMs" : 0.00527675, "medianMs" : 0.00512, "percentage" : 2.74048 }
+, { "name" : "/model_fp32/layer1/0/conv2/Constant_2_output_0 + /model_fp32/layer1/0/conv2/Conv", "timeMs" : 79.9381, "averageMs" : 0.0058653, "medianMs" : 0.006144, "percentage" : 3.04614 }
+, { "name" : "PWN(/model_fp32/layer1/0/Add, PWN(/model_fp32/layer1/0/relu2/Relu))", "timeMs" : 56.7695, "averageMs" : 0.00416534, "medianMs" : 0.004096, "percentage" : 2.16327 }
+, { "name" : "/model_fp32/layer1/1/conv1/Constant_2_output_0 + /model_fp32/layer1/1/conv1/Conv + /model_fp32/layer1/1/conv1/Relu", "timeMs" : 66.1751, "averageMs" : 0.00485546, "medianMs" : 0.00512, "percentage" : 2.52168 }
+, { "name" : "/model_fp32/layer1/1/conv2/Constant_2_output_0 + /model_fp32/layer1/1/conv2/Conv", "timeMs" : 75.5587, "averageMs" : 0.00554397, "medianMs" : 0.00512, "percentage" : 2.87926 }
+, { "name" : "PWN(/model_fp32/layer1/1/Add, PWN(/model_fp32/layer1/1/relu2/Relu))", "timeMs" : 58.329, "averageMs" : 0.00427977, "medianMs" : 0.004096, "percentage" : 2.22269 }
+, { "name" : "/model_fp32/layer2/0/conv1/Constant_2_output_0 + /model_fp32/layer2/0/conv1/Conv + /model_fp32/layer2/0/conv1/Relu", "timeMs" : 75.7841, "averageMs" : 0.0055605, "medianMs" : 0.00512, "percentage" : 2.88784 }
+, { "name" : "/model_fp32/layer2/0/downsample/0/Constant_2_output_0 + /model_fp32/layer2/0/downsample/0/Conv", "timeMs" : 66.59, "averageMs" : 0.00488591, "medianMs" : 0.00512, "percentage" : 2.53749 }
+, { "name" : "/model_fp32/layer2/0/conv2/Constant_2_output_0 + /model_fp32/layer2/0/conv2/Conv", "timeMs" : 88.7851, "averageMs" : 0.00651442, "medianMs" : 0.006144, "percentage" : 3.38326 }
+, { "name" : "PWN(/model_fp32/layer2/0/Add, PWN(/model_fp32/layer2/0/relu2/Relu))", "timeMs" : 55.8465, "averageMs" : 0.00409763, "medianMs" : 0.004096, "percentage" : 2.1281 }
+, { "name" : "/model_fp32/layer2/1/conv1/Constant_2_output_0 + /model_fp32/layer2/1/conv1/Conv + /model_fp32/layer2/1/conv1/Relu", "timeMs" : 95.8664, "averageMs" : 0.007034, "medianMs" : 0.007168, "percentage" : 3.65311 }
+, { "name" : "/model_fp32/layer2/1/conv2/Constant_2_output_0 + /model_fp32/layer2/1/conv2/Conv", "timeMs" : 88.3569, "averageMs" : 0.00648301, "medianMs" : 0.006144, "percentage" : 3.36695 }
+, { "name" : "PWN(/model_fp32/layer2/1/Add, PWN(/model_fp32/layer2/1/relu2/Relu))", "timeMs" : 57.4084, "averageMs" : 0.00421222, "medianMs" : 0.004096, "percentage" : 2.18761 }
+, { "name" : "/model_fp32/layer3/0/conv1/Constant_2_output_0 + /model_fp32/layer3/0/conv1/Conv + /model_fp32/layer3/0/conv1/Relu", "timeMs" : 90.176, "averageMs" : 0.00661648, "medianMs" : 0.00624, "percentage" : 3.43626 }
+, { "name" : "/model_fp32/layer3/0/downsample/0/Constant_2_output_0 + /model_fp32/layer3/0/downsample/0/Conv", "timeMs" : 75.264, "averageMs" : 0.00552234, "medianMs" : 0.00512, "percentage" : 2.86802 }
+, { "name" : "/model_fp32/layer3/0/conv2/Constant_2_output_0 + /model_fp32/layer3/0/conv2/Conv", "timeMs" : 112.818, "averageMs" : 0.00827777, "medianMs" : 0.008192, "percentage" : 4.29906 }
+, { "name" : "PWN(/model_fp32/layer3/0/Add, PWN(/model_fp32/layer3/0/relu2/Relu))", "timeMs" : 53.442, "averageMs" : 0.0039212, "medianMs" : 0.004096, "percentage" : 2.03647 }
+, { "name" : "/model_fp32/layer3/1/conv1/Constant_2_output_0 + /model_fp32/layer3/1/conv1/Conv + /model_fp32/layer3/1/conv1/Relu", "timeMs" : 113.138, "averageMs" : 0.00830127, "medianMs" : 0.008192, "percentage" : 4.31126 }
+, { "name" : "/model_fp32/layer3/1/conv2/Constant_2_output_0 + /model_fp32/layer3/1/conv2/Conv", "timeMs" : 118.898, "averageMs" : 0.00872393, "medianMs" : 0.008512, "percentage" : 4.53077 }
+, { "name" : "PWN(/model_fp32/layer3/1/Add, PWN(/model_fp32/layer3/1/relu2/Relu))", "timeMs" : 56.8742, "averageMs" : 0.00417303, "medianMs" : 0.004096, "percentage" : 2.16726 }
+, { "name" : "/model_fp32/layer4/0/conv1/Constant_2_output_0 + /model_fp32/layer4/0/conv1/Conv + /model_fp32/layer4/0/conv1/Relu", "timeMs" : 124.196, "averageMs" : 0.00911263, "medianMs" : 0.009216, "percentage" : 4.73264 }
+, { "name" : "/model_fp32/layer4/0/downsample/0/Constant_2_output_0 + /model_fp32/layer4/0/downsample/0/Conv", "timeMs" : 70.4303, "averageMs" : 0.00516768, "medianMs" : 0.00512, "percentage" : 2.68383 }
+, { "name" : "/model_fp32/layer4/0/conv2/Constant_2_output_0 + /model_fp32/layer4/0/conv2/Conv", "timeMs" : 165.497, "averageMs" : 0.012143, "medianMs" : 0.012288, "percentage" : 6.30646 }
 , { "name" : "Reformatting CopyNode for Input Tensor 0 to PWN(/model_fp32/layer4/0/Add, PWN(/model_fp32/layer4/0/relu2/Relu))", "timeMs" : 0, "averageMs" : 0, "medianMs" : 0, "percentage" : 0 }
 , { "name" : "Reformatting CopyNode for Input Tensor 1 to PWN(/model_fp32/layer4/0/Add, PWN(/model_fp32/layer4/0/relu2/Relu))", "timeMs" : 0, "averageMs" : 0, "medianMs" : 0, "percentage" : 0 }
-, { "name" : "PWN(/model_fp32/layer4/0/Add, PWN(/model_fp32/layer4/0/relu2/Relu))", "timeMs" : 46.3779, "averageMs" : 0.00346465, "medianMs" : 0.003072, "percentage" : 1.79593 }
+, { "name" : "PWN(/model_fp32/layer4/0/Add, PWN(/model_fp32/layer4/0/relu2/Relu))", "timeMs" : 47.5815, "averageMs" : 0.00349119, "medianMs" : 0.003136, "percentage" : 1.81315 }
 , { "name" : "Reformatting CopyNode for Input Tensor 0 to /model_fp32/layer4/1/conv1/Constant_2_output_0 + /model_fp32/layer4/1/conv1/Conv + /model_fp32/layer4/1/conv1/Relu", "timeMs" : 0, "averageMs" : 0, "medianMs" : 0, "percentage" : 0 }
-, { "name" : "/model_fp32/layer4/1/conv1/Constant_2_output_0 + /model_fp32/layer4/1/conv1/Conv + /model_fp32/layer4/1/conv1/Relu", "timeMs" : 160.184, "averageMs" : 0.0119665, "medianMs" : 0.012288, "percentage" : 6.20293 }
-, { "name" : "/model_fp32/layer4/1/conv2/Constant_2_output_0 + /model_fp32/layer4/1/conv2/Conv", "timeMs" : 164.211, "averageMs" : 0.0122673, "medianMs" : 0.012288, "percentage" : 6.35885 }
-, { "name" : "Reformatting CopyNode for Input Tensor 0 to PWN(/model_fp32/layer4/1/Add, PWN(/model_fp32/layer4/1/relu2/Relu))", "timeMs" : 0, "averageMs" : 0, "medianMs" : 0, "percentage" : 0 }
+, { "name" : "/model_fp32/layer4/1/conv1/Constant_2_output_0 + /model_fp32/layer4/1/conv1/Conv + /model_fp32/layer4/1/conv1/Relu", "timeMs" : 161.577, "averageMs" : 0.0118554, "medianMs" : 0.012288, "percentage" : 6.15709 }
+, { "name" : "/model_fp32/layer4/1/conv2/Constant_2_output_0 + /model_fp32/layer4/1/conv2/Conv", "timeMs" : 164.781, "averageMs" : 0.0120905, "medianMs" : 0.012288, "percentage" : 6.27918 }
 , { "name" : "Reformatting CopyNode for Input Tensor 1 to PWN(/model_fp32/layer4/1/Add, PWN(/model_fp32/layer4/1/relu2/Relu))", "timeMs" : 0, "averageMs" : 0, "medianMs" : 0, "percentage" : 0 }
-, { "name" : "PWN(/model_fp32/layer4/1/Add, PWN(/model_fp32/layer4/1/relu2/Relu))", "timeMs" : 46.6305, "averageMs" : 0.00348353, "medianMs" : 0.003072, "percentage" : 1.80571 }
+, { "name" : "PWN(/model_fp32/layer4/1/Add, PWN(/model_fp32/layer4/1/relu2/Relu))", "timeMs" : 47.9931, "averageMs" : 0.0035214, "medianMs" : 0.003168, "percentage" : 1.82884 }
 , { "name" : "Reformatting CopyNode for Input Tensor 0 to /model_fp32/fc/Constant_2_output_0 + /model_fp32/fc/Conv", "timeMs" : 0, "averageMs" : 0, "medianMs" : 0, "percentage" : 0 }
-, { "name" : "/model_fp32/fc/Constant_2_output_0 + /model_fp32/fc/Conv", "timeMs" : 71.0002, "averageMs" : 0.00530407, "medianMs" : 0.00512, "percentage" : 2.7494 }
-, { "name" : "Reformatting CopyNode for Input Tensor 0 to /model_fp32/Flatten", "timeMs" : 52.6151, "averageMs" : 0.0039306, "medianMs" : 0.004096, "percentage" : 2.03745 }
+, { "name" : "/model_fp32/fc/Constant_2_output_0 + /model_fp32/fc/Conv", "timeMs" : 72.0208, "averageMs" : 0.00528438, "medianMs" : 0.00512, "percentage" : 2.74444 }
+, { "name" : "Reformatting CopyNode for Input Tensor 0 to /model_fp32/Flatten", "timeMs" : 54.7146, "averageMs" : 0.00401457, "medianMs" : 0.004096, "percentage" : 2.08497 }
 , { "name" : "/model_fp32/Flatten", "timeMs" : 0, "averageMs" : 0, "medianMs" : 0, "percentage" : 0 }
-, { "name" : "/dequant/DequantizeLinear", "timeMs" : 44.1779, "averageMs" : 0.00330031, "medianMs" : 0.003072, "percentage" : 1.71074 }
+, { "name" : "/dequant/DequantizeLinear", "timeMs" : 45.8132, "averageMs" : 0.00336145, "medianMs" : 0.003072, "percentage" : 1.74577 }
 ]

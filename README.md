@@ -11,7 +11,7 @@ PyTorch quantization models from the native PyTorch eager model quantization API
 To build the custom Docker image, run the following command.
 
 ```bash
-$ docker build -f docker/pytorch-tensorrt.Dockerfile --no-cache --tag=pytorch-tensorrt:2.3.0 .
+$ docker build -f docker/pytorch-tensorrt.Dockerfile --no-cache --tag=pytorch-tensorrt:2.3.1 .
 ```
 
 ### Run Docker Container
@@ -19,7 +19,7 @@ $ docker build -f docker/pytorch-tensorrt.Dockerfile --no-cache --tag=pytorch-te
 To run the Docker container, run the following command.
 
 ```bash
-$ docker run -it --rm --gpus device=0 --ipc=host --ulimit memlock=-1 --ulimit stack=67108864 -v $(pwd):/mnt pytorch-tensorrt:2.3.0
+$ docker run -it --rm --gpus device=0 --ipc=host --ulimit memlock=-1 --ulimit stack=67108864 -v $(pwd):/mnt pytorch-tensorrt:2.3.1
 ```
 
 ### ResNet CIFAR10 FP32 Training and INT8 Static Quantization Calibration
@@ -31,11 +31,11 @@ The floating-point and INT8-quantized ResNet models will be exported to ONNX for
 ```bash
 $ python resnet_torch.py
 FP32 Evaluation Accuracy: 0.854
-INT8 Evaluation Accuracy: 0.852
-FP32 CPU Inference Latency: 2.64 ms / sample
-FP32 CUDA Inference Latency: 1.74 ms / sample
-INT8 CPU Inference Latency: 46.98 ms / sample
-INT8 JIT CPU Inference Latency: 44.84 ms / sample
+INT8 Evaluation Accuracy: 0.854
+FP32 CPU Inference Latency: 2.67 ms / sample
+FP32 CUDA Inference Latency: 1.87 ms / sample
+INT8 CPU Inference Latency: 47.28 ms / sample
+INT8 JIT CPU Inference Latency: 43.36 ms / sample
 ```
 
 The INT8-quantized ResNet model has almost the same accuracy as the floating-point ResNet model. Probably because PyTorch CPU inference does not support per-channel symmetric quantization well, the INT8-quantized ResNet model CPU inference is much slower comparing to [other quantization schemes](https://leimao.github.io/blog/PyTorch-Static-Quantization/), which is not compatible to TensorRT quantization requirements, on the same model.
@@ -54,31 +54,31 @@ The floating-point and INT8-quantized ResNet ONNX models will be built to Tensor
 
 ```bash
 $ trtexec --onnx=saved_models/resnet_cifar10.onnx --saveEngine=saved_models/resnet_cifar10_fp16.engine --fp16 --separateProfileRun --exportLayerInfo=saved_models/resnet_cifar10_fp16_layer_info.json --exportProfile=saved_models/resnet_cifar10_fp16_profile.json --verbose &> saved_models/resnet_cifar10_fp16_build_log.txt
-[05/19/2024-19:06:41] [I] === Performance summary ===
-[05/19/2024-19:06:41] [I] Throughput: 4760.8 qps
-[05/19/2024-19:06:41] [I] Latency: min = 0.193115 ms, max = 1.85248 ms, mean = 0.215958 ms, median = 0.195679 ms, percentile(90%) = 0.197632 ms, percentile(95%) = 0.199219 ms, percentile(99%) = 0.910339 ms
-[05/19/2024-19:06:41] [I] Enqueue Time: min = 0.0510254 ms, max = 0.203674 ms, mean = 0.0646378 ms, median = 0.0593262 ms, percentile(90%) = 0.0931091 ms, percentile(95%) = 0.0960083 ms, percentile(99%) = 0.105347 ms
-[05/19/2024-19:06:41] [I] H2D Latency: min = 0.00366211 ms, max = 0.0654297 ms, mean = 0.00467193 ms, median = 0.00415039 ms, percentile(90%) = 0.0057373 ms, percentile(95%) = 0.00585938 ms, percentile(99%) = 0.00701904 ms
-[05/19/2024-19:06:41] [I] GPU Compute Time: min = 0.186279 ms, max = 1.8432 ms, mean = 0.208177 ms, median = 0.188354 ms, percentile(90%) = 0.189423 ms, percentile(95%) = 0.19043 ms, percentile(99%) = 0.903168 ms
-[05/19/2024-19:06:41] [I] D2H Latency: min = 0.00256348 ms, max = 0.0194092 ms, mean = 0.00311522 ms, median = 0.00292969 ms, percentile(90%) = 0.00366211 ms, percentile(95%) = 0.00390625 ms, percentile(99%) = 0.00427246 ms
-[05/19/2024-19:06:41] [I] Total Host Walltime: 3.00055 s
-[05/19/2024-19:06:41] [I] Total GPU Compute Time: 2.97381 s
+[07/22/2024-01:14:18] [I] === Performance summary ===
+[07/22/2024-01:14:18] [I] Throughput: 4755.58 qps
+[07/22/2024-01:14:18] [I] Latency: min = 0.194138 ms, max = 1.2041 ms, mean = 0.216214 ms, median = 0.197052 ms, percentile(90%) = 0.199219 ms, percentile(95%) = 0.201416 ms, percentile(99%) = 0.98291 ms
+[07/22/2024-01:14:18] [I] Enqueue Time: min = 0.0526733 ms, max = 0.149902 ms, mean = 0.0652547 ms, median = 0.0603027 ms, percentile(90%) = 0.0861816 ms, percentile(95%) = 0.0930176 ms, percentile(99%) = 0.104248 ms
+[07/22/2024-01:14:18] [I] H2D Latency: min = 0.00341797 ms, max = 0.0146484 ms, mean = 0.00464704 ms, median = 0.00415039 ms, percentile(90%) = 0.00585938 ms, percentile(95%) = 0.00585938 ms, percentile(99%) = 0.00695801 ms
+[07/22/2024-01:14:18] [I] GPU Compute Time: min = 0.187378 ms, max = 1.19604 ms, mean = 0.208473 ms, median = 0.189453 ms, percentile(90%) = 0.190491 ms, percentile(95%) = 0.192505 ms, percentile(99%) = 0.974854 ms
+[07/22/2024-01:14:18] [I] D2H Latency: min = 0.00256348 ms, max = 0.0172119 ms, mean = 0.00308884 ms, median = 0.00292969 ms, percentile(90%) = 0.003479 ms, percentile(95%) = 0.00390625 ms, percentile(99%) = 0.00427246 ms
+[07/22/2024-01:14:18] [I] Total Host Walltime: 3.00068 s
+[07/22/2024-01:14:18] [I] Total GPU Compute Time: 2.9749 s
 ```
 
 ```bash
 $ trtexec --onnx=saved_models/resnet_quantized_cifar10_modified.onnx --saveEngine=saved_models/resnet_cifar10_int8.engine --int8 --separateProfileRun --exportLayerInfo=saved_models/resnet_cifar10_int8_layer_info.json --exportProfile=saved_models/resnet_cifar10_int8_profile.json --verbose &> saved_models/resnet_cifar10_int8_build_log.txt
-[05/19/2024-19:09:22] [I] === Performance summary ===
-[05/19/2024-19:09:22] [I] Throughput: 5614.67 qps
-[05/19/2024-19:09:22] [I] Latency: min = 0.157227 ms, max = 1.13483 ms, mean = 0.183582 ms, median = 0.159729 ms, percentile(90%) = 0.162476 ms, percentile(95%) = 0.352905 ms, percentile(99%) = 0.694092 ms
-[05/19/2024-19:09:22] [I] Enqueue Time: min = 0.0622559 ms, max = 0.625732 ms, mean = 0.0809989 ms, median = 0.067627 ms, percentile(90%) = 0.112549 ms, percentile(95%) = 0.118164 ms, percentile(99%) = 0.152832 ms
-[05/19/2024-19:09:22] [I] H2D Latency: min = 0.0032959 ms, max = 0.296875 ms, mean = 0.00448601 ms, median = 0.00415039 ms, percentile(90%) = 0.00561523 ms, percentile(95%) = 0.00585938 ms, percentile(99%) = 0.00720215 ms
-[05/19/2024-19:09:22] [I] GPU Compute Time: min = 0.150391 ms, max = 1.1264 ms, mean = 0.17584 ms, median = 0.152588 ms, percentile(90%) = 0.153625 ms, percentile(95%) = 0.345093 ms, percentile(99%) = 0.687012 ms
-[05/19/2024-19:09:22] [I] D2H Latency: min = 0.00244141 ms, max = 0.0214844 ms, mean = 0.0032584 ms, median = 0.00292969 ms, percentile(90%) = 0.00415039 ms, percentile(95%) = 0.00439453 ms, percentile(99%) = 0.00488281 ms
-[05/19/2024-19:09:22] [I] Total Host Walltime: 3.00053 s
-[05/19/2024-19:09:22] [I] Total GPU Compute Time: 2.96238 s
+[07/22/2024-02:02:08] [I] === Performance summary ===
+[07/22/2024-02:02:08] [I] Throughput: 6482.3 qps
+[07/22/2024-02:02:08] [I] Latency: min = 0.155762 ms, max = 0.977173 ms, mean = 0.159906 ms, median = 0.158081 ms, percentile(90%) = 0.159668 ms, percentile(95%) = 0.161133 ms, percentile(99%) = 0.17627 ms
+[07/22/2024-02:02:08] [I] Enqueue Time: min = 0.0668945 ms, max = 0.166992 ms, mean = 0.0760865 ms, median = 0.0698242 ms, percentile(90%) = 0.107178 ms, percentile(95%) = 0.109741 ms, percentile(99%) = 0.115479 ms
+[07/22/2024-02:02:08] [I] H2D Latency: min = 0.00366211 ms, max = 0.0285034 ms, mean = 0.00416142 ms, median = 0.00402832 ms, percentile(90%) = 0.00439453 ms, percentile(95%) = 0.00463867 ms, percentile(99%) = 0.00585938 ms
+[07/22/2024-02:02:08] [I] GPU Compute Time: min = 0.149414 ms, max = 0.969727 ms, mean = 0.152529 ms, median = 0.150574 ms, percentile(90%) = 0.151611 ms, percentile(95%) = 0.152588 ms, percentile(99%) = 0.166992 ms
+[07/22/2024-02:02:08] [I] D2H Latency: min = 0.00244141 ms, max = 0.0283203 ms, mean = 0.00321606 ms, median = 0.00292969 ms, percentile(90%) = 0.00408936 ms, percentile(95%) = 0.00418091 ms, percentile(99%) = 0.00463867 ms
+[07/22/2024-02:02:08] [I] Total Host Walltime: 3.00048 s
+[07/22/2024-02:02:08] [I] Total GPU Compute Time: 2.96669 s
 ```
 
-Even if the input images to the ResNet model are small (32 x 32) and the batch size is only 1, comparing to the floating-point ResNet engine, the INT8-quantized ResNet engine has a 1.2x latency improvement. The models that have higher math utilization will have more significant latency improvements when quantized to INT8.
+Even if the input images to the ResNet model are small (32 x 32) and the batch size is only 1, comparing to the floating-point ResNet engine, the INT8-quantized ResNet engine has a 1.3x latency improvement. The models that have higher math utilization will have more significant latency improvements when quantized to INT8.
 
 ### Validate TensorRT Engine
 
@@ -90,7 +90,7 @@ Input Tensor:
 Tensor Name: x.1 Shape: (1, 3, 32, 32) Data Type: float32 Data Format: TensorFormat.LINEAR
 Output Tensor:
 Tensor Name: 755 Shape: (1, 10) Data Type: float32 Data Format: TensorFormat.LINEAR
-Evaluation Accuracy: 0.8512
+Evaluation Accuracy: 0.8532
 ```
 
 The accuracy of the INT8-quantized ResNet TensorRT engine matches the PyTorch INT8-quantized model accuracy, suggesting that the INT8-quantized TensorRT engine was built correctly.
